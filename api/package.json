@@ -1,0 +1,27 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "PropScrapper! api",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --experimental-modules index.mjs"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@mysql/xdevapi": "^8.0.13",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "express": "^5.0.0-alpha.7",
+    "moment": "^2.23.0",
+    "multer": "^2.0.0-alpha.6",
+    "mysql": "^2.16.0",
+    "node-fetch": "^2.3.0",
+    "uuid": "^3.3.2",
+    "validator": "^10.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "nodemon": "^1.18.9"
+  }
+}
