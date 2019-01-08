@@ -1,31 +1,17 @@
-"use strict";
-
 // Imports
-
 import express from "express";
-import cors from "cors";
 
 // App Imports
-import list from "./components";
+import setupServer from "./setup/server";
+import setupAPI from "./setup/api";
 
 // Create server
 const app = express();
+const router = express.Router()
 
-// Enable CORS
-app.use(cors());
+// Setup server
+setupServer(app)
 
-// Request body parser
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+// Setup database
+setupAPI(app, router)
 
-app.use("/api", list);
-
-const server = {
-  host: "http://localhost",
-  port: 8080
-};
-
-const port = process.env.PORT || server.port;
-app.listen(port, () => {
-  console.log(`Listening on ${server.host}:${port} ..`);
-});

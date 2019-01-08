@@ -4,10 +4,11 @@ import validate from '../props/validate';
 import normalize from '../props/normalize';
 import housesArrayProduce from '../props/makeArray';
 import statusArray from '../props/statusArray';
-import upload from '../props/upload'
-import mysql from './mysql';
+import mysql from '../../setup/database';
 import express from 'express';
 const router = express.Router();
+
+console.log(router)
 
 router.get('/', async (req, res, next) => {
   const promise = new Promise(async (resolve, reject) => {
@@ -78,27 +79,27 @@ async function retrieveAllHouses(reqQuery) {
   });
 }
 
-router.post('/add', upload.single('file'), async (req, res, next) => {
-  const xx = req.file.path;
-  const myFile = `./${xx}`;
+// router.post('/add', upload.single('file'), async (req, res, next) => {
+//   const xx = req.file.path;
+//   const myFile = `./${xx}`;
 
-  const data = await readJsonFile(myFile);
-  const myData = JSON.parse(data);
-  if (Array.isArray(myData) && myData.length < 1) {
-    res.status(404).json({ message: 'The json file is empty!' });
-  } else if (emptyCheck(myData)) {
-    res.status(404).json({ message: 'The json file is empty!' });
-  } else {
-    const report = validLoop(myData);
-    //res.status(200).json(report.errReport);
-    const filterdData = normLoop(report.validItems);
-    const houses = housesArrayProduce(filterdData);
-    const cityStatus = statusArray(filterdData);
+//   const data = await readJsonFile(myFile);
+//   const myData = JSON.parse(data);
+//   if (Array.isArray(myData) && myData.length < 1) {
+//     res.status(404).json({ message: 'The json file is empty!' });
+//   } else if (emptyCheck(myData)) {
+//     res.status(404).json({ message: 'The json file is empty!' });
+//   } else {
+//     const report = validLoop(myData);
+//     //res.status(200).json(report.errReport);
+//     const filterdData = normLoop(report.validItems);
+//     const houses = housesArrayProduce(filterdData);
+//     const cityStatus = statusArray(filterdData);
 
-    const responseResult = insertIntoDatabase(report, houses, cityStatus);
-    res.status(200).json(responseResult);
-  }
-});
+//     const responseResult = insertIntoDatabase(report, houses, cityStatus);
+//     res.status(200).json(responseResult);
+//   }
+// });
 
 router.post('/add-url', async (req, res, next) => {
   const { link } = req.body;

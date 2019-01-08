@@ -1,0 +1,7 @@
+{
+    "password": "01020304",
+    "user": "root",
+    "host": "localhost",
+    "port": 33060,
+    "schema": "mydb"
+}
