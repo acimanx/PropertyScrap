@@ -25,9 +25,8 @@ export default async function(app) {
 
   // console.info('INFO - Schemas deployed.')
 
-const table = schema.getTable('houses')
+  return schema.getCollection('houses')
 
-  return table
   
   } catch (err) {
     throw err

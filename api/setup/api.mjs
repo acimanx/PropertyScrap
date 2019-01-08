@@ -10,7 +10,4 @@ export default async function(app, router) {
     app.get('/chart', controller.getChart)
     app.post('/upload', controller.postUpload)
     
-
-
-
 }
