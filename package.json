@@ -19,7 +19,7 @@
     "moment": "^2.24.0",
     "multer": "^2.0.0-alpha.6",
     "mysql": "^2.17.1",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^2.6.0",
     "uuid": "^3.3.2",
     "validator": "^10.10.0",
     "concurrently": "^4.1.1"
