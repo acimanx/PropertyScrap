@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^5.0.0-alpha.7",
-    "moment": "^2.23.0",
+    "moment": "^2.24.0",
     "multer": "^2.0.0-alpha.6",
     "mysql": "^2.16.0",
     "node-fetch": "^2.3.0",
