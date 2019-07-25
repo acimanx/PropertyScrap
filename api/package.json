@@ -10,7 +10,7 @@
   "dependencies": {
     "@mysql/xdevapi": "^8.0.17",
     "body-parser": "^1.18.3",
-    "concurrently": "^4.1.0",
+    "concurrently": "^4.1.1",
     "cors": "^2.8.5",
     "express": "^5.0.0-alpha.7",
     "moment": "^2.23.0",
